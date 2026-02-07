@@ -1,0 +1,36 @@
+.input-panel {
+    border-top: 1px solid var(--border-color);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    transition: background 0.3s ease, border 0.3s ease;
+}
+
+.input-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--heading2-accent);
+}
+
+.input-textarea {
+    width: 100%;
+    min-height: 50px;
+    resize: vertical;
+    padding: 0.65rem 0.7rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    background: var(--input-bg);
+    color: var(--muted-text);
+    border: 1px solid var(--border-color);
+    outline: none;
+    transition: background 0.25s ease, border 0.25s ease;
+}
+
+.input-textarea:focus {
+    border-color: var(--primary-color);
+}
+
+.input-textarea::placeholder {
+    color: var(--muted-text);
+}

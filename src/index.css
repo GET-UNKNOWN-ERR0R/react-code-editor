@@ -1,0 +1,57 @@
+:root {
+    --bg: #f8fafc;
+    --bg-soft: #ffffff;
+    --page-bg: #f8fafc;
+    --panel-bg: #ffffff;
+    --card-bg: #ffffff;
+    --footer-bg: #f1f5f9;
+    --input-bg: #f9fafb;
+    --tab-bg: #e5e7eb;
+    --text-color: #0f172a;
+    --text-soft: #475569;
+    --muted-text: #64748b;
+    --border-color: #e2e8f0;
+    --accent: #5083f2;
+    --accent-soft: rgba(37, 99, 235, 0.14);
+    --primary-color: #2563eb;
+    --accent-gradient: linear-gradient(135deg, #2563eb, #38bdf8);
+    --heading-accent: #047857;
+    --heading1-accent: #5083f2;
+    --heading2-accent: #047857;
+}
+
+html.dark {
+    --bg: #0b1220;
+    --bg-soft: #0f172a;
+    --page-bg: #0b1220;
+    --panel-bg: #0f172a;
+    --card-bg: #0f172a;
+    --footer-bg: #020617;
+    --input-bg: #020617;
+    --tab-bg: #1e293b;
+    --text-color: #e5e7eb;
+    --text-soft: #94a3b8;
+    --muted-text: #64748b;
+    --border-color: #1e293b;
+    --accent: #60a5fa;
+    --accent-soft: rgba(96, 165, 250, 0.18);
+    --primary-color: #60a5fa;
+    --accent-gradient: linear-gradient(135deg, #60a5fa, #38bdf8);
+    --heading-accent: #6ee7b7;
+    --heading1-accent: #6ee7b7;
+    --heading2-accent: #6ee7b7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: "Inter", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text-color);
+    transition: background 0.3s ease, color 0.3s ease;
+}

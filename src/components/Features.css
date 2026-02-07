@@ -1,0 +1,142 @@
+#features {
+    margin-top: -40px;
+}
+
+.features {
+    padding: clamp(64px, 8vw, 100px) 16px;
+    padding: clamp(10px, 1vw, 70px) 8px;
+
+}
+
+.features-layout {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 64px;
+}
+
+.features-header {
+    margin-bottom: 40px;
+}
+
+.features-header h2 {
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    color: var(--heading-accent);
+    font-weight: 600;
+
+}
+
+.features-header p {
+    margin-top: 6px;
+    color: var(--text-soft);
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 24px;
+}
+
+.timeline-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--muted-text);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item.active .timeline-dot {
+    background: var(--accent);
+    box-shadow: 0 0 0 6px var(--accent-soft);
+}
+
+.timeline-line {
+    flex: 1;
+    width: 2px;
+    margin-top: 8px;
+    background: var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-line::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    transform: translateY(-100%);
+    animation: flow 2.5s linear infinite;
+    opacity: 0.25;
+}
+
+@keyframes flow {
+    to {
+        transform: translateY(100%);
+    }
+}
+
+.timeline-content {
+    padding-left: 4px;
+}
+
+.timeline-icon {
+    width: 22px;
+    height: 22px;
+    color: var(--heading1-accent);
+}
+
+.timeline-content h3 {
+    margin: 6px 0;
+    font-size: 1.05rem;
+    color: var(--text-color);
+}
+
+.timeline-content p {
+    color: var(--text-soft);
+    max-width: 520px;
+}
+
+.features-info {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.features-info h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--heading-accent);
+    margin-bottom: 12px;
+}
+
+.features-info p {
+    color: var(--text-soft);
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.features-highlight {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .features-layout {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+}

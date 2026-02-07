@@ -1,0 +1,162 @@
+ .navbar {
+     position: relative;
+     width: 100%;
+     height: 64px;
+     background: var(--bg-soft);
+     border-bottom: 1px solid var(--border-color);
+     z-index: 10
+ }
+
+ .navbar-inner {
+     max-width: 1200px;
+     margin: auto;
+     height: 100%;
+     padding: 0 1rem;
+     display: flex;
+     align-items: center;
+     justify-content: space-between
+ }
+
+ .logo {
+     font-size: 1.3rem;
+     font-weight: 600;
+     text-decoration: none;
+     color: var(--heading-accent)
+ }
+
+ .menu {
+     display: flex;
+     align-items: center;
+     gap: .75rem
+ }
+
+ .menu.mobile {
+     display: none
+ }
+
+ .nav-link {
+     background: 0;
+     border: 1px solid transparent;
+     font-size: .95rem;
+     font-weight: 500;
+     color: var(--text-soft);
+     cursor: pointer;
+     padding: 8px 14px;
+     border-radius: 8px;
+     transition: background .2s, color .2s
+ }
+
+ .nav-link:hover {
+     background: var(--accent-soft);
+     color: var(--heading-accent)
+ }
+
+ .icon-btn {
+     background: 0;
+     border: 1px solid transparent;
+     font-size: 1.2rem;
+     color: var(--text-soft);
+     cursor: pointer;
+     padding: 6px;
+     border-radius: 8px;
+     display: grid;
+     place-items: center;
+     transition: background .2s, color .2s
+ }
+
+ .icon-btn:hover {
+     background: var(--accent-soft);
+     color: var(--accent)
+ }
+
+ .drawer {
+     position: fixed;
+     top: 0;
+     right: -100%;
+     width: 260px;
+     height: 100vh;
+     background: var(--card-bg);
+     border-left: 1px solid var(--border-color);
+     padding: 0 1rem;
+     transition: right .3s;
+     z-index: 1100;
+     display: flex;
+     flex-direction: column
+ }
+
+ .drawer.open {
+     right: 0
+ }
+
+ .close-btn {
+     height: 64px;
+     display: flex;
+     align-items: center;
+     justify-content: flex-end;
+     background: 0;
+     border: 0;
+     font-size: 1.5rem;
+     color: var(--text-soft);
+     cursor: pointer;
+     padding: 0 6px
+ }
+
+ .close-btn svg {
+     font-size: 2rem;
+     padding: 6px;
+     border-radius: 8px;
+     transition: background .2s, color .2s
+ }
+
+ .close-btn svg:hover {
+     background: var(--accent-soft);
+     color: var(--accent)
+ }
+
+ .drawer-links {
+     display: flex;
+     flex-direction: column;
+     gap: .5rem
+ }
+
+ .drawer-links a,
+ .drawer-links button {
+     background: 0;
+     border: 1px solid transparent;
+     text-align: left;
+     font-size: 1rem;
+     color: var(--text-soft);
+     cursor: pointer;
+     padding: 10px 12px;
+     border-radius: 8px;
+     transition: background .2s, color .2s
+ }
+
+ .drawer-links a:hover,
+ .drawer-links button:hover {
+     background: var(--accent-soft);
+     color: var(--heading-accent)
+ }
+
+ @media(max-width:768px) {
+     .menu.desktop {
+         display: none
+     }
+
+     .menu.mobile {
+         display: flex
+     }
+ }
+
+ /* Home page centered width (same as now) */
+ .navbar-home .navbar-inner {
+     max-width: 1200px;
+     margin: auto;
+ }
+
+ /* Other pages full width */
+ .navbar-full .navbar-inner {
+     max-width: 100%;
+     margin: 0;
+     padding: 0 1.5rem;
+ }

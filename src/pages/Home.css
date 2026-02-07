@@ -1,0 +1,124 @@
+.home-hero {
+    margin: -25px;
+    padding: 4rem 1rem 2.5rem;
+    text-align: center;
+    transition: .3s
+}
+
+.home-hero h1 {
+    font-size: clamp(1.4rem, 4vw, 2.6rem);
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: .75rem;
+    padding: 0 5px
+}
+
+.home-hero p {
+    margin-top: 10px;
+    padding: 0 15px;
+    font-size: 1rem;
+    color: var(--text-soft)
+}
+
+.language-section,
+#usage,
+#features {
+    background: var(--bg);
+    padding: 40px;
+    transition: .3s
+}
+
+.language-grid {
+    display: grid;
+    gap: clamp(10px, 3vw, 16px);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
+}
+
+@media(max-width:420px) {
+    .language-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+.hero-title {
+    font-size: clamp(1.6rem, 4.5vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: .6rem;
+    opacity: 0;
+    animation: heroFadeUp 0.8s ease forwards;
+}
+
+.hero-gradient {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShift 3s ease infinite;
+}
+
+.hero-accent {
+    color: var(--heading2-accent);
+}
+
+.hero-sub {
+    font-size: 1rem;
+    color: var(--text-soft);
+    max-width: 520px;
+    margin: auto;
+    opacity: 0;
+    animation: heroFadeUp 0.9s ease forwards;
+    animation-delay: .15s;
+}
+
+
+.section-title {
+    text-align: center;
+    font-size: clamp(1.3rem, 3.5vw, 2rem);
+    font-weight: 650;
+    margin-top: 1.2rem;
+
+    margin-bottom: 1.8rem;
+    opacity: 0;
+    animation: heroFadeUp 0.9s ease forwards;
+}
+
+.section-gradient {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.section-accent {
+    background: var(--accent-gradient);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+
+
+
+
+}
+
+@keyframes heroFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(25deg);
+    }
+}

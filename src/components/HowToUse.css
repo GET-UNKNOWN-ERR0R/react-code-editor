@@ -1,0 +1,123 @@
+.howto-shell {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: clamp(32px, 6vw, 64px);
+}
+
+/* LEFT */
+.howto-left h2 {
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    color: var(--heading-accent);
+    font-weight: 600;
+
+}
+
+.howto-left p {
+    margin-top: 10px;
+    color: var(--text-soft);
+    max-width: 420px;
+}
+
+.howto-left ul {
+    margin-top: 20px;
+    padding-left: 18px;
+    color: var(--text-color);
+}
+
+.howto-left li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* RIGHT PANEL */
+.howto-flow {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: clamp(20px, 4vw, 32px);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* FLOW ROW */
+.editor-row {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: 18px;
+}
+
+/* TRACK */
+.editor-track {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.editor-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+    z-index: 2;
+    animation: pulse 2s infinite;
+}
+
+.editor-line {
+    position: absolute;
+    top: 14px;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--border-color), transparent);
+}
+
+/* CONTENT */
+.editor-body {
+    padding-bottom: 4px;
+}
+
+.editor-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.editor-header svg {
+    width: 20px;
+    height: 20px;
+    color: var(--heading1-accent);
+}
+
+.editor-desc {
+    margin-top: 6px;
+    font-size: 0.85rem;
+    color: var(--text-soft);
+    max-width: 420px;
+}
+
+/* DOT ANIMATION */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 8px rgba(99, 102, 241, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 720px) {
+    .howto-shell {
+        grid-template-columns: 1fr;
+    }
+}
