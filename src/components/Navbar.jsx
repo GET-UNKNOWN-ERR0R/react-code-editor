@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FiMenu, FiX, FiSun, FiMoon } from "react-icons/fi";
-import "./navbar.css";
+import "./Navbar.css";
 
 export default function Navbar({ dark, setDark }) {
     const [open, setOpen] = useState(false);
