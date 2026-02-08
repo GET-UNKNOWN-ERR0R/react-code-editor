@@ -12,15 +12,23 @@ export const languageMap = {
     typescript: 74,
     swift: 83,
     r: 80,
+
     csharp: 51,
     dart: 84,
     scala: 81,
     haskell: 61,
     perl: 85,
     lua: 64,
+
     bash: 46,
+    shell: 46,
+
     powershell: 82,
     groovy: 88,
     objectivec: 79,
-    assembly: 45
+    assembly: 45,
+    dart: 84,
+    julia: 89,
+    hack: 44,
+    d: 56,
 };

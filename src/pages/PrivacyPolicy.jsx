@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
       {/* Introduction */}
       <section id="privacy-introduction" className="privacy-section">
         <p className="privacy-text">
-          At CodeEditor, your privacy is extremely important to us. This Privacy
+          At CodePILOT, your privacy is extremely important to us. This Privacy
           Policy explains how we collect, use, store, and protect your
           information when you use our platform, services, and tools.
         </p>
@@ -49,7 +49,7 @@ export default function PrivacyPolicy() {
         <h2 className="privacy-heading">How We Use Your Information</h2>
 
         <ul className="privacy-list">
-          <li>To provide and maintain the CodeEditor service</li>
+          <li>To provide and maintain the CodePILOT service</li>
           <li>To improve performance, reliability, and usability</li>
           <li>To respond to user queries and support requests</li>
           <li>To detect, prevent, and resolve security issues</li>
@@ -60,7 +60,7 @@ export default function PrivacyPolicy() {
       <section id="privacy-code" className="privacy-section">
         <h2 className="privacy-heading">Code & Content Privacy</h2>
         <p className="privacy-text">
-          Any source code written or executed inside CodeEditor remains private
+          Any source code written or executed inside CodePILOT remains private
           to the user. We do not review, sell, or share your code unless required
           for security, legal compliance, or with your explicit consent.
         </p>
@@ -70,7 +70,7 @@ export default function PrivacyPolicy() {
       <section id="privacy-cookies" className="privacy-section">
         <h2 className="privacy-heading">Cookies & Tracking</h2>
         <p className="privacy-text">
-          CodeEditor may use cookies or similar technologies to improve user
+          CodePILOT may use cookies or similar technologies to improve user
           experience, remember preferences, and analyze platform usage. You can
           disable cookies through your browser settings if you prefer.
         </p>
@@ -90,7 +90,7 @@ export default function PrivacyPolicy() {
       <section id="privacy-third-party" className="privacy-section">
         <h2 className="privacy-heading">Third-Party Services</h2>
         <p className="privacy-text">
-          CodeEditor may integrate with trusted third-party services for
+          CodePILOT may integrate with trusted third-party services for
           analytics, authentication, or infrastructure. These services follow
           their own privacy policies and standards.
         </p>
@@ -125,14 +125,14 @@ export default function PrivacyPolicy() {
           please contact us at:
         </p>
         <p className="privacy-contact-email">
-          <strong>Email:</strong> support@codeeditor.dev
+          <strong>Email:</strong> support@codePILOT.dev
         </p>
       </section>
 
       {/* Footer */}
       <footer id="privacy-footer" className="privacy-footer">
         <p className="privacy-footer-text">
-          🔒 Your trust matters to us. CodeEditor is committed to protecting
+          🔒 Your trust matters to us. CodePILOT is committed to protecting
           your privacy and data.
         </p>
       </footer>

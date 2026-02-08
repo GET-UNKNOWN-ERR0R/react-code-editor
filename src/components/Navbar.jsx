@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FiMenu, FiX, FiSun, FiMoon } from "react-icons/fi";
@@ -40,7 +39,7 @@ export default function Navbar({ dark, setDark }) {
                         </button>
 
                         <button onClick={() => scrollToSection("usage")} className="nav-link">
-                            Usage
+                            Workflow
                         </button>
 
                         <button onClick={() => setDark(!dark)} className="icon-btn">
@@ -70,7 +69,7 @@ export default function Navbar({ dark, setDark }) {
                 <div className="drawer-links">
                     <Link to="/" onClick={() => setOpen(false)}>Home</Link>
                     <button onClick={() => scrollToSection("features")}>Features</button>
-                    <button onClick={() => scrollToSection("usage")}>Usage</button>
+                    <button onClick={() => scrollToSection("usage")}>Workflow</button>
                 </div>
             </div>
         </>

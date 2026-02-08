@@ -38,11 +38,11 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/editor/:lang" element={<Editor />} />
         {/* FOOTER ROUTES */}
-        <Route path="/about" element={<About />} />
+        <Route path="/about-us" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/privacy" element={<PrivacyPolicy />} />
-        <Route path="/docs" element={<Documentation />} />
-        <Route path="/api" element={<API />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/documentation" element={<Documentation />} />
+        <Route path="/api-reference" element={<API />} />
         <Route path="/tutorials" element={<Tutorials />} />
       </Routes>
       {/* <Footer /> */}

@@ -3,7 +3,7 @@ import "./InputPanel.css";
 export default function InputPanel({ input, setInput, dark }) {
     return (
         <div className={`input-panel ${dark ? "dark" : ""}`}>
-            <h3 className="input-title">Input (stdin)</h3>
+            <h3 className="input-title">Input</h3>
 
             <textarea
                 className="input-textarea"

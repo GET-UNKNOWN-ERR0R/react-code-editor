@@ -20,12 +20,11 @@ export default function Editor() {
     const [theme, setTheme] = useState("light");
 
     const [activeTab, setActiveTab] = useState("html");
+    const [htmlCode, setHtmlCode] = useState('<h1 id="title">Hello CodePilot</h1><button id="btn">Click me</button>');
 
-    const [htmlCode, setHtmlCode] = useState("<h1>Hello HTML</h1>");
-    const [cssCode, setCssCode] = useState(
-        "body { font-family: Arial; background: #f5f5f5; }"
-    );
-    const [jsCode, setJsCode] = useState("console.log('Hello JS');");
+    const [cssCode, setCssCode] = useState("body{font-family:Arial,sans-serif;text-align:center;margin-top:80px;}#title{color:#2563eb;}#btn{padding:10px 18px;border:none;background:#111;color:#fff;cursor:pointer;border-radius:6px;}#btn:hover{background:#333;}");
+
+    const [jsCode, setJsCode] = useState('document.getElementById("btn").addEventListener("click",()=>{document.getElementById("title").innerText="Button Clicked!";});');
 
     const [htmlPreview, setHtmlPreview] = useState("");
 
@@ -80,6 +79,7 @@ export default function Editor() {
 
         return () => observer.disconnect();
     }, []);
+
     const runCode = async (sourceCode = code) => {
         if (lang === "html") {
             const combined = `
@@ -196,11 +196,23 @@ ${htmlCode}
                         language={
                             lang === "html"
                                 ? activeTab === "js"
-                                    ? "javascript"   // ✅ FIX
-                                    : activeTab
+                                    ? "javascript"
+                                    : activeTab === "css"
+                                        ? "css"
+                                        : "html"
                                 : lang === "js"
                                     ? "javascript"
-                                    : lang
+                                    : lang === "groovy"
+                                        ? "java"
+                                        : lang === "objectivec"
+                                            ? "cpp"
+                                            : lang === "assembly"
+                                                ? "shell"
+                                                : lang === "d"
+                                                    ? "shell"
+                                                    : lang === "bash"
+                                                        ? "shell"
+                                                        : lang
                         }
                         theme={theme}
 
@@ -213,12 +225,15 @@ ${htmlCode}
                                         : jsCode
                                 : code
                         }
+
                         onChange={(v) => {
                             if (lang === "html") {
                                 if (activeTab === "html") setHtmlCode(v || "");
                                 if (activeTab === "css") setCssCode(v || "");
                                 if (activeTab === "js") setJsCode(v || "");
-                            } else setCode(v || "");
+                            } else {
+                                setCode(v || "");
+                            }
                         }}
                         options={{
                             automaticLayout: true,

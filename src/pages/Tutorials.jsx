@@ -5,7 +5,7 @@ export default function Tutorials() {
     <div id="tutorials-page" className="tutorials-container">
       {/* Header */}
       <header id="tutorials-header" className="tutorials-header">
-        <h1 className="tutorials-title">CodeEditor Tutorials</h1>
+        <h1 className="tutorials-title">CodePILOT Tutorials</h1>
         <p className="tutorials-intro">
           Learn how to use CodeEditor effectively with step-by-step tutorials,
           examples, and best practices for writing and executing code.
@@ -18,7 +18,7 @@ export default function Tutorials() {
         <p className="tutorials-text">
           The Tutorials section is designed to help beginners and experienced
           developers understand how to write, run, and debug code using
-          CodeEditor. Each tutorial focuses on a specific concept and gradually
+          CodePILOT. Each tutorial focuses on a specific concept and gradually
           builds your confidence.
         </p>
       </section>
@@ -27,11 +27,12 @@ export default function Tutorials() {
       <section id="tutorials-getting-started" className="tutorials-section">
         <h2 className="tutorials-heading">Getting Started</h2>
         <p className="tutorials-text">
-          Follow these steps to begin coding with CodeEditor:
+          Follow these steps to begin coding with
+          CodePILOT:
         </p>
 
         <ol className="tutorials-list ordered">
-          <li>Open the CodeEditor platform</li>
+          <li>Open the CodePILOT platform</li>
           <li>Select a programming language</li>
           <li>Write or paste your source code</li>
           <li>Provide input if required</li>
@@ -67,7 +68,7 @@ export default function Tutorials() {
         <ul className="tutorials-list">
           <li>Writing complex algorithms</li>
           <li>Memory and performance considerations</li>
-          <li>Using CodeEditor APIs</li>
+          <li>Using CodePILOT APIs</li>
           <li>Debugging large codebases</li>
         </ul>
       </section>
@@ -76,7 +77,7 @@ export default function Tutorials() {
       <section id="tutorials-execution" className="tutorials-section">
         <h2 className="tutorials-heading">Understanding Code Execution</h2>
         <p className="tutorials-text">
-          When you run code in CodeEditor, it executes inside a secure and
+          When you run code in CodePILOT, it executes inside a secure and
           isolated environment. This ensures that your system remains safe while
           providing accurate output and error messages.
         </p>
@@ -111,7 +112,7 @@ export default function Tutorials() {
 
         <p className="tutorials-text">
           <strong>Can I practice multiple languages?</strong><br />
-          Yes. CodeEditor supports multiple programming languages.
+          Yes. CodePILOT supports multiple programming languages.
         </p>
       </section>
 

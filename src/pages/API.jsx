@@ -5,9 +5,9 @@ export default function API() {
     <div className="api-container">
       {/* Header */}
       <section className="api-header">
-        <h1>Code Editor API</h1>
+        <h1>CodePILOT API</h1>
         <p>
-          The Code Editor API allows developers to embed a powerful online code
+          The CodePILOT API allows developers to embed a powerful online code
           editor, compiler, and execution engine directly into their own
           applications.
         </p>
@@ -92,7 +92,7 @@ export default function API() {
       {/* Status */}
       <section className="api-footer">
         <p>
-          🚧 The Code Editor API is currently under active development.
+          🚧 The CodePILOT API is currently under active development.
           Documentation, authentication, and rate limiting will be introduced in
           upcoming releases.
         </p>

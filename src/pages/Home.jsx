@@ -26,7 +26,7 @@ export default function Home() {
                     <span className="hero-accent">Fast & Easy</span>
                 </h1>
                 <p className="hero-sub">
-                    Powerful online compiler for modern developers
+                    Powerful online editor for modern developers
                 </p>
             </section>
 

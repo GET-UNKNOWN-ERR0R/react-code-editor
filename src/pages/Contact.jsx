@@ -9,7 +9,7 @@ export default function Contact() {
       <p className="contact-intro">
         We’d love to hear from you. Whether you have a question, found a bug,
         want to suggest a feature, or simply want to share feedback, the
-        CodeEditor team is always open to listening.
+        CodePILOT team is always open to listening.
       </p>
 
       {/* Reach Us */}
@@ -24,7 +24,7 @@ export default function Contact() {
 
       <ul className="contact-list">
         <li>
-          <strong>Email:</strong> support@codeeditor.dev
+          <strong>Email:</strong> support@codePILOT.dev
         </li>
         <li>
           <strong>Response Time:</strong> Typically within 24–48 hours
@@ -37,7 +37,7 @@ export default function Contact() {
       </h2>
 
       <ul className="contact-list">
-        <li>Technical issues or bugs in the code editor</li>
+        <li>Technical issues or bugs in the codePILOT</li>
         <li>Feature requests or improvement suggestions</li>
         <li>Questions about supported languages or execution limits</li>
         <li>Feedback on user experience and performance</li>
@@ -61,7 +61,7 @@ export default function Contact() {
       </h2>
 
       <p className="contact-text">
-        Security is a top priority at CodeEditor. If you discover a potential
+        Security is a top priority at CodePILOT. If you discover a potential
         vulnerability or security issue, please report it immediately via
         email. Responsible disclosure helps us keep the platform safe for
         everyone.
@@ -80,7 +80,7 @@ export default function Contact() {
 
       {/* Closing */}
       <p className="contact-closing">
-        Thank you for using CodeEditor and being part of our growing developer
+        Thank you for using CodePILOT and being part of our growing developer
         community 🚀
       </p>
     </div>

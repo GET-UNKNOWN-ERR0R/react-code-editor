@@ -7,7 +7,7 @@ export default function Footer({ dark }) {
             <div className="footer-container">
 
                 <div>
-                    <h3 className="footer-brand">CodeEditor</h3>
+                    <h3 className="footer-brand">CodePILOT</h3>
                     <p className="footer-text">
                         A modern online code editor to write, run and share code across
                         multiple programming languages — directly from your browser.
@@ -29,10 +29,10 @@ export default function Footer({ dark }) {
                     <h4 className="footer-title">Resources</h4>
                     <ul className="footer-list">
                         <li>
-                            <Link to="/docs">Documentation</Link>
+                            <Link to="/documentation">Documentation</Link>
                         </li>
                         <li>
-                            <Link to="/api">API Reference</Link>
+                            <Link to="/api-reference">API Reference</Link>
                         </li>
                         <li>
                             <Link to="/tutorials">Tutorials</Link>
@@ -44,20 +44,20 @@ export default function Footer({ dark }) {
                     <h4 className="footer-title">Company</h4>
                     <ul className="footer-list">
                         <li>
-                            <Link to="/about">About Us</Link>
+                            <Link to="/about-us">About Us</Link>
                         </li>
                         <li>
                             <Link to="/contact">Contact</Link>
                         </li>
                         <li>
-                            <Link to="/privacy">Privacy Policy</Link>
+                            <Link to="/privacy-policy">Privacy Policy</Link>
                         </li>
                     </ul>
                 </div>
             </div>
 
             <div className={`footer-bottom ${dark ? "dark" : ""}`}>
-                © {new Date().getFullYear()} CodeEditor. All rights reserved.
+                © {new Date().getFullYear()} CodePILOT.All rights reserved.
             </div>
         </footer>
     );

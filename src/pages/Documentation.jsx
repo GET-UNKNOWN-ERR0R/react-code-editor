@@ -5,9 +5,9 @@ export default function Documentation() {
     <div id="docs-page" className="docs-container">
       {/* Header */}
       <header id="docs-header" className="docs-header">
-        <h1 className="docs-title">CodeEditor Documentation</h1>
+        <h1 className="docs-title">Documentation</h1>
         <p className="docs-intro">
-          Welcome to the official documentation of CodeEditor. This guide
+          Welcome to the official documentation of CodePILOT. This guide
           explains how the editor works, its features, and how developers can
           integrate and use it effectively.
         </p>
@@ -17,7 +17,7 @@ export default function Documentation() {
       <section id="docs-introduction" className="docs-section">
         <h2 className="docs-heading">Introduction</h2>
         <p className="docs-text">
-          CodeEditor is a browser-based code editor and execution platform that
+          CodePILOT is a browser-based code editor and execution platform that
           allows users to write, run, and test code instantly. It is designed to
           be fast, secure, and beginner-friendly while remaining powerful enough
           for advanced use cases.
@@ -28,7 +28,7 @@ export default function Documentation() {
       <section id="docs-getting-started" className="docs-section">
         <h2 className="docs-heading">Getting Started</h2>
         <p className="docs-text">
-          Using CodeEditor does not require any installation. Simply select a
+          Using CodePILOT does not require any installation. Simply select a
           programming language, write your code in the editor, and run it to see
           the output in real time.
         </p>
@@ -43,7 +43,7 @@ export default function Documentation() {
 
       {/* Editor Features */}
       <section id="docs-editor-features" className="docs-section">
-        <h2 className="docs-heading">Editor Features</h2>
+        <h2 className="docs-heading">PILOT Features</h2>
 
         <ul className="docs-list">
           <li>Syntax highlighting for supported languages</li>
@@ -74,15 +74,25 @@ export default function Documentation() {
       <section id="docs-languages" className="docs-section">
         <h2 className="docs-heading">Supported Languages</h2>
         <p className="docs-text">
-          CodeEditor supports multiple programming languages. The list is
+          CodePILOT supports multiple programming languages. The list is
           continuously expanding based on user demand.
         </p>
 
         <ul className="docs-list">
           <li>JavaScript</li>
           <li>Python</li>
-          <li>C / C++</li>
+          <li>C++</li>
           <li>Java</li>
+          <li>C</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>SHELL</li>
+          <li>Ruby</li>
+          <li>Go</li>
+          <li>Kotlin</li>
+          <li>Rust</li>
+          <li>PHP</li>
+          <li>Swift</li>
           <li>More languages coming soon</li>
         </ul>
       </section>
@@ -91,7 +101,7 @@ export default function Documentation() {
       <section id="docs-api" className="docs-section">
         <h2 className="docs-heading">API Reference (Preview)</h2>
         <p className="docs-text">
-          CodeEditor provides APIs for executing code and retrieving results.
+          CodePILOT provides APIs for executing code and retrieving results.
           These APIs allow developers to integrate the editor and compiler into
           their own applications.
         </p>
@@ -126,7 +136,7 @@ export default function Documentation() {
         <h2 className="docs-heading">Frequently Asked Questions</h2>
 
         <p className="docs-text">
-          <strong>Is CodeEditor free to use?</strong><br />
+          <strong>Is CodePILOT free to use?</strong><br />
           Yes, the basic editor features are free.
         </p>
 
@@ -140,7 +150,7 @@ export default function Documentation() {
       <footer id="docs-footer" className="docs-footer">
         <p className="docs-footer-text">
           📘 This documentation is continuously updated as new features are
-          added to CodeEditor.
+          added to CodePILOT.
         </p>
       </footer>
     </div>

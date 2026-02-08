@@ -1,4 +1,3 @@
-
 import "./OutputPanel.css";
 
 export default function OutputPanel({ output, lang, htmlPreview, dark }) {
@@ -21,3 +20,4 @@ export default function OutputPanel({ output, lang, htmlPreview, dark }) {
         </div>
     );
 }
+

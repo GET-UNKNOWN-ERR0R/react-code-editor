@@ -4,7 +4,6 @@
     justify-content: space-between;
     padding: 0.75rem 1rem;
     border-bottom: 1px solid var(--border-color);
-    /* background: var(--panel-bg); */
     color: var(--text-color);
     transition: background 0.3s ease, color 0.3s ease;
 }
