@@ -40,7 +40,6 @@ export default function Editor() {
         isResizing.current = false;
         document.body.style.cursor = "default";
     };
-
     const resize = (e) => {
         if (!isResizing.current) return;
 
@@ -49,8 +48,13 @@ export default function Editor() {
 
         if (newLeftWidth > 30 && newLeftWidth < 80) {
             setLeftWidth(newLeftWidth);
+
+            requestAnimationFrame(() => {
+                editorRef.current?.layout();
+            });
         }
     };
+
 
     useEffect(() => {
         window.addEventListener("mousemove", resize);
@@ -83,16 +87,16 @@ export default function Editor() {
     const runCode = async (sourceCode = code) => {
         if (lang === "html") {
             const combined = `
-<!DOCTYPE html>
-<html>
-<head>
-<style>${cssCode}</style>
-</head>
-<body>
-${htmlCode}
-<script>${jsCode}</script>
-</body>
-</html>`;
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <style>${cssCode}</style>
+    </head>
+    <body>
+    ${htmlCode}
+    <script>${jsCode}</script>
+    </body>
+    </html>`;
             setHtmlPreview(combined);
             setOutput("");
             return;
@@ -162,6 +166,69 @@ ${htmlCode}
         URL.revokeObjectURL(url);
     };
 
+
+    const editorRef = useRef(null);
+
+    const [menu, setMenu] = useState({
+        show: false,
+        x: 0,
+        y: 0
+    });
+
+    const onRightClick = (e) => {
+        e.preventDefault();
+        setMenu({ show: true, x: e.clientX, y: e.clientY });
+    };
+
+    const closeMenu = () => {
+        setMenu(m => ({ ...m, show: false }));
+    };
+
+    const cutCode = async () => {
+        const editor = editorRef.current;
+        const text = editor.getModel().getValueInRange(editor.getSelection());
+        await navigator.clipboard.writeText(text);
+        editor.executeEdits("", [{ range: editor.getSelection(), text: "" }]);
+        closeMenu();
+    };
+
+    const copyCode = async () => {
+        const editor = editorRef.current;
+        const text = editor.getModel().getValueInRange(editor.getSelection());
+        await navigator.clipboard.writeText(text);
+        closeMenu();
+    };
+
+    const copyAll = async () => {
+        await navigator.clipboard.writeText(editorRef.current.getValue());
+        closeMenu();
+    };
+
+    const pasteCode = async () => {
+        const text = await navigator.clipboard.readText();
+        editorRef.current.executeEdits("", [
+            { range: editorRef.current.getSelection(), text }
+        ]);
+        closeMenu();
+    };
+
+    const selectAll = () => {
+        editorRef.current.trigger("keyboard", "editor.action.selectAll");
+        closeMenu();
+    };
+
+    const formatDocument = () => {
+        editorRef.current
+            .getAction("editor.action.formatDocument")
+            .run();
+        closeMenu();
+    };
+
+    const runFromMenu = () => {
+        runCode(editorRef.current.getValue());
+        closeMenu();
+    };
+
     return (
         <div className="editor-root">
             <EditorHeader
@@ -176,6 +243,8 @@ ${htmlCode}
                 <div
                     className="editor-left"
                     style={{ width: `${leftWidth}%` }}
+                    onContextMenu={onRightClick}
+                    onClick={closeMenu}
                 >
                     {lang === "html" && (
                         <div className="editor-tabs">
@@ -236,17 +305,20 @@ ${htmlCode}
                             }
                         }}
                         options={{
+                            contextmenu: false,
                             automaticLayout: true,
                             fontSize: 15,
                             fontFamily: "Fira Code, monospace",
                             fontLigatures: true,
                             lineHeight: 20,
                             cursorBlinking: "smooth",
-                            cursorSmoothCaretAnimation: "on",
+                            cursorSmoothCaretAnimation: "off",
                             cursorStyle: "line",
-                            padding: { top: 12, bottom: 12 },
-                            smoothScrolling: true,
+                            smoothScrolling: false,
                             lineNumbers: "on",
+                            revealOnScroll: false,
+                            padding: { top: 8, bottom: 8 },
+
                             lineNumbersMinChars: 3,
                             minimap: { enabled: false },
                             scrollbar: {
@@ -262,7 +334,7 @@ ${htmlCode}
                             wordWrap: "on",
                             roundedSelection: true,
                             renderLineHighlight: "none",
-                            renderLineHighlightOnlyWhenFocus: false,
+                            renderLineHighlightOnlyWhenFocus: true,
                             scrollBeyondLastLine: false,
                             matchBrackets: "always",
                             autoClosingBrackets: "always",
@@ -275,32 +347,15 @@ ${htmlCode}
                             quickSuggestions: true,
                             suggestFontSize: 13,
                             suggestLineHeight: 24,
+
+                            guides: {
+                                indentation: false,
+                                highlightActiveIndentation: false,
+                            },
+
                         }}
-                        onMount={(editor, monaco) => {
-                            editor.addCommand(
-                                monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter,
-                                () => runCode(editor.getValue())
-                            );
-
-                            editor.addAction({
-                                id: "run-code",
-                                label: "▶ Run Code",
-                                run: () => runCode(editor.getValue())
-                            });
-
-                            editor.addAction({
-                                id: "reset-editor",
-                                label: "♻ Reset Editor",
-                                run: resetEditor
-                            });
-
-                            editor.addAction({
-                                id: "copy-all-code",
-                                label: "📋 Copy All Code",
-                                run: async () => {
-                                    await navigator.clipboard.writeText(editor.getValue());
-                                }
-                            });
+                        onMount={(editor) => {
+                            editorRef.current = editor;
                         }}
                     />
                 </div>
@@ -323,7 +378,70 @@ ${htmlCode}
                     />
                 </div>
 
+                {menu.show && (
+                    <div
+                        style={{
+                            position: "fixed",
+                            top: menu.y,
+                            left: menu.x,
+                            background: "var(--panel-bg)",
+                            color: "var(--text-color)",
+                            borderRadius: "8px",
+                            padding: "6px 0",
+                            zIndex: 9999,
+                            minWidth: "190px",
+                            border: "1px solid var(--border-color)",
+                            boxShadow:
+                                "0 8px 24px rgba(0,0,0,.18), 0 2px 6px rgba(0,0,0,.12)",
+                            fontSize: "14px"
+                        }}
+                    >
+                        {[
+                            ["Cut", cutCode],
+                            ["Copy", copyCode],
+                            ["Copy All", copyAll],
+                            ["Paste", pasteCode],
+                            ["Select All", selectAll],
+                            ["divider"],
+                            ["Format Document", formatDocument],
+                            ["Run Code", runFromMenu],
+                        ].map((item, i) =>
+                            item[0] === "divider" ? (
+                                <div
+                                    key={i}
+                                    style={{
+                                        height: "1px",
+                                        margin: "6px 0",
+                                        background: "var(--border-color)"
+                                    }}
+                                />
+                            ) : (
+                                <div
+                                    key={item[0]}
+                                    onClick={item[1]}
+                                    style={{
+                                        padding: "8px 16px",
+                                        cursor: "pointer",
+                                        userSelect: "none",
+                                        fontWeight:
+                                            item[0] === "Run Code" ? 600 : 400
+                                    }}
+                                    onMouseEnter={e => {
+                                        e.currentTarget.style.background = "var(--tab-bg)";
+                                    }}
+                                    onMouseLeave={e => {
+                                        e.currentTarget.style.background = "transparent";
+                                    }}
+                                >
+                                    {item[0]}
+                                </div>
+                            )
+                        )}
+                    </div>
+                )}
+
             </div>
         </div>
+
     );
 }

@@ -98,6 +98,8 @@
   .editor-left {
     width: 100% !important;
     min-width: unset;
+    height: 55vh;
+    min-height: 200px;
   }
 
   .editor-right {

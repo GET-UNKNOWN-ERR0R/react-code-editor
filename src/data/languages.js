@@ -40,11 +40,13 @@ export default [
         icon: SiC,
         judge0: 50,
         code: `#include <stdio.h>
+      
 int main() {
-  printf("Hello CodePILOT");
- return 0;
+    printf("Hello CodePILOT");
+    return 0;
 }`
     },
+
     {
         id: "cpp",
         name: "C++",
@@ -52,24 +54,27 @@ int main() {
         judge0: 54,
         code: `#include <iostream>
 using namespace std;
-   int main() {
+
+int main() {
     cout << "Hello CodePILOT";
- return 0;
+    return 0;
 }`
 
     },
-
     {
         id: "java",
         name: "Java",
         icon: SiOpenjdk,
         judge0: 62,
-        code: `class Main {
-  public static void main(String[] args) {
-    System.out.println("Hello CodePILOT");
-  }
+        code: `import java.util.*;
+      
+public class Main {
+     public static void main(String[] args) {
+       System.out.println("Hello, World!");
+     }
 }`
     },
+
     {
         id: "python",
         name: "Python",
@@ -91,6 +96,20 @@ using namespace std;
         judge0: 74,
         code: `const msg: string = "Hello CodePILOT";
 console.log(msg);`
+    },
+    {
+        id: "html",
+        name: "HTML",
+        icon: SiHtml5,
+        judge0: null,
+        code: "<h1>Hello CodePilot</h1>"
+    },
+
+    {
+        id: "html",
+        name: "CSS",
+        icon: SiCss3,
+        judge0: null,
     },
     {
         id: "go",
@@ -207,9 +226,10 @@ echo "Hello CodePILOT"`
         icon: VscTerminal,
         judge0: 56,
         code: `import std.stdio;
- void main() {
+
+void main() {
     writeln("Hello CodePILOT");
-    }`
+}`
     },
     {
         id: "objectivec",
@@ -218,12 +238,12 @@ echo "Hello CodePILOT"`
         judge0: 79,
         code: `#import <Foundation/Foundation.h>
       
-      int main() {
-        @autoreleasepool {
-          NSLog(@"Hello CodePILOT");
-        }
-        return 0;
-      }`
+ int main() {
+    @autoreleasepool {
+        NSLog(@"Hello CodePILOT");
+    }
+    return 0;
+ }`
     },
     {
         id: "assembly",
@@ -231,12 +251,11 @@ echo "Hello CodePILOT"`
         icon: FaMicrochip,
         judge0: 45,
         code: `section .data
-      msg db "Hello CodePILOT",10
+msg db "Hello CodePILOT",10
       
-      section .text
+section .text
       global _start
-      
-      _start:
+_start:
       mov rax, 1
       mov rdi, 1
       mov rsi, msg
@@ -247,19 +266,6 @@ echo "Hello CodePILOT"`
       xor rdi, rdi
       syscall`
     },
-    {
-        id: "html",
-        name: "HTML",
-        icon: SiHtml5,
-        judge0: null,
-        code: "<h1>Hello CodePilot</h1>"
-    },
 
-    {
-        id: "html",
-        name: "CSS",
-        icon: SiCss3,
-        judge0: null,
-    },
 
 ];

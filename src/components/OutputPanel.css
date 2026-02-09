@@ -24,7 +24,6 @@
     padding: 1rem;
     background: var(--bg-color);
     color: var(--text-color);
-    color: var(--muted-text);
     font-size: 0.9rem;
     line-height: 1.5;
     overflow: auto;

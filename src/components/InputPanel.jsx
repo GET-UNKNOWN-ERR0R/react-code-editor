@@ -7,7 +7,7 @@ export default function InputPanel({ input, setInput, dark }) {
 
             <textarea
                 className="input-textarea"
-                placeholder="Enter input here..."
+                placeholder="Input (Optional)"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
             />
