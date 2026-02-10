@@ -11,6 +11,8 @@ import InputPanel from "../components/InputPanel";
 import "./Editor.css";
 
 export default function Editor() {
+    const longPressTimer = useRef(null);
+
     const { lang } = useParams();
     const selected = languages.find(l => l.id === lang);
 
@@ -244,7 +246,23 @@ ${htmlCode}
                     className="editor-left"
                     style={{ width: `${leftWidth}%` }}
                     onContextMenu={onRightClick}
+
+                    onTouchStart={(e) => {
+                        const touch = e.touches[0];
+                        longPressTimer.current = setTimeout(() => {
+                            setMenu({
+                                show: true,
+                                x: touch.clientX,
+                                y: touch.clientY
+                            });
+                        }, 500);
+                    }}
+                    onTouchEnd={() => {
+                        clearTimeout(longPressTimer.current);
+                    }}
+
                     onClick={closeMenu}
+
                 >
                     {lang === "html" && (
                         <div className="editor-tabs">
